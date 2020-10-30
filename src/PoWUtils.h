@@ -296,7 +296,7 @@ class PoWUtils {
     static const uint64_t log_150_48 = 0x502b8fea053a6LL;
 
     /* 1.0 / 2^47 (for debugging) (not 48 bytes because rounding errors could count as failure) */
-#if defined(__GNUC__) && __GNUC__ > 5
+#if __APPLE__ || (defined(__GNUC__) && __GNUC__ > 5)
     static constexpr double accuracy = 7.105427357601002e-15;
 #else
     static const double accuracy = 7.105427357601002e-15;
